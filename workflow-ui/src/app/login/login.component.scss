@@ -1,0 +1,45 @@
+.option-card {
+    width: 90vw;
+    display: flex;
+}
+
+.action-card {
+    justify-content: center;
+}
+
+.container-options {
+    display: grid;
+}
+
+.div-card {
+    width: 100vw;
+    display: flex;
+    margin-top: 12px;
+    justify-content: center;
+}
+
+mat-form-field {
+    width: 100%;
+}
+.login-card {
+    width: 90vw;
+    display:inline-block;
+}
+
+.login-header-image {
+    background-image: url('/assets/checklist.png');
+    background-size: cover;
+}
+
+.action-card {
+    justify-content: center;
+}
+
+.div-card {
+    width: 100vw;
+    display: flex;
+    margin-top: 12px;
+    justify-content: center;
+    height: 100vh;;
+    align-items: center;
+}

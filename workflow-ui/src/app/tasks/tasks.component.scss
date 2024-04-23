@@ -1,0 +1,26 @@
+.high-header-image {
+    background-image: url('/assets/high.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.medium-header-image {
+    background-image: url('/assets/medium.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.low-header-image {
+    background-image: url('/assets/low.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.action-card {
+    justify-content: center;
+}
+
+.task-card {
+    margin-top: 10px;
+    width: 90vw;
+}
