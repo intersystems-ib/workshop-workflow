@@ -71,7 +71,7 @@ ClassMethod UserInRole(username As %String, role As %String) As %Status
 ClassMethod CheckTask(username As %String, role As %String, Output task) As %Status
 {
     set $NAMESPACE = "WORKFLOW"
-    &sql(SELECT ID INTO :taskId FROM EnsLib_Workflow.TaskResponse WHERE %UserName = :username AND TaskStatus_IsComplete = 0 AND %RoleName = :role)
+    &sql(SELECT ID INTO :taskId FROM EnsLib_Workflow.TaskResponse WHERE TaskStatus_AssignedTo = :username AND TaskStatus_IsComplete = 0 AND %RoleName = :role)
 
     if (SQLCODE<0) {
         Return $$$ERROR(%msg)

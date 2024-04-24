@@ -32,6 +32,7 @@ zn "WORKFLOW" \
 Do ##class(EnsLib.Workflow.RoleDefinition).CreateRole("ManualBloodPressureRole") \
 Do ##class(EnsLib.Workflow.RoleDefinition).CreateRole("AutomaticBloodPressureRole") \
 set sc = $SYSTEM.OBJ.LoadDir("/opt/irisapp/src/Workflow", "ck", , 1) \
+do ##class(Workflow.Utils.Functions).UserExists("FakeDoctor","ManualBloodPressureRole") \
 # start production
 set production = "Workflow.Production" \
 set ^Ens.Configuration("csp","LastProduction") = production \

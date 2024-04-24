@@ -17,6 +17,7 @@ export class TasksComponent {
 
   getTasks()
   {
+    this.tasks = [];
     this.irisService.getTasks().subscribe({
       next: res => {  
         this.loading = false;

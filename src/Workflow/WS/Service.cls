@@ -35,7 +35,7 @@ ClassMethod GetTasks() As %Status
         If '##class(%REST.Impl).%CheckAccepts("application/json") Do ##class(%REST.Impl).%ReportRESTError(..#HTTP406NOTACCEPTABLE,$$$ERROR($$$RESTBadAccepts)) Quit
         
         Do ##class(%REST.Impl).%SetStatusCode("200")
-        set sql = "SELECT %Actions, %Message, %Priority, %Subject, TaskStatus_TimeCreated, ID FROM EnsLib_Workflow.TaskResponse WHERE TaskStatus_AssignedTo = ?"
+        set sql = "SELECT %Actions, %Message, %Priority, %Subject, TaskStatus_TimeCreated, ID FROM EnsLib_Workflow.TaskResponse WHERE TaskStatus_AssignedTo = ? and %Actions not like 'Automatic'"
         set statement = ##class(%SQL.Statement).%New(), statement.%ObjectSelectMode = 1
         set status = statement.%Prepare(sql)
         if ($$$ISOK(status)) {
