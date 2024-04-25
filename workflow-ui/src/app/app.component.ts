@@ -40,6 +40,7 @@ export class AppComponent implements OnDestroy{
     logout(): void {
       this.authService.logout().subscribe({
         next: data => {
+          this.storageService.clean()
           this.router.navigate(['login']);
         },
         error: err => {

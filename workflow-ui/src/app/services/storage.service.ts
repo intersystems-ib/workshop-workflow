@@ -11,6 +11,7 @@ export class StorageService {
 
   clean(): void {
     window.sessionStorage.removeItem(USER_KEY);
+    window.sessionStorage.removeItem(USER_NAME);
   }
 
   save(userToken: string, username: string): void {

@@ -68,23 +68,18 @@ ClassMethod UserInRole(username As %String, role As %String) As %Status
     Return $$$OK
 }
 
-ClassMethod CheckTask(username As %String, role As %String, Output task) As %Status
+ClassMethod CheckTask(username As %String, role As %String) As EnsLib.Workflow.TaskResponse
 {
     set $NAMESPACE = "WORKFLOW"
     &sql(SELECT ID INTO :taskId FROM EnsLib_Workflow.TaskResponse WHERE TaskStatus_AssignedTo = :username AND TaskStatus_IsComplete = 0 AND %RoleName = :role)
-
-    if (SQLCODE<0) {
-        Return $$$ERROR(%msg)
-    }
-    elseif (SQLCODE = 100)
-    {
-        Return $$$ERROR("No pending tasks")
+       
+    if ((SQLCODE<0) || SQLCODE = 100) {
+        Return ""
     }
     else {
         set task = ##class(EnsLib.Workflow.TaskResponse).%OpenId(taskId)
+        Return task
     }
-        
-    Return $$$OK
 }
 
 }
