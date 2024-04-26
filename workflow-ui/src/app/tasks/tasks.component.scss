@@ -16,6 +16,12 @@
     background-repeat: no-repeat;
 }
 
+.none-header-image {
+    background-image: url('/assets/none.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .action-card {
     justify-content: center;
 }

@@ -24,6 +24,9 @@ export class TasksComponent {
         for (var task of res) {
           this.tasks.push(task);
         }
+        if (this.tasks.length == 0) {
+          this.tasks.push({"actions":"","message":"No tasks assigned to you","priority":"0","subject":"No pending task","creation":"","id":""})
+        }
       },
       error: err => {
         console.error(JSON.stringify(err));

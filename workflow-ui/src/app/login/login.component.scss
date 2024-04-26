@@ -16,6 +16,7 @@
     display: flex;
     margin-top: 12px;
     justify-content: center;
+    height: 50vh;
 }
 
 mat-form-field {
@@ -27,10 +28,21 @@ mat-form-field {
 }
 
 .login-header-image {
-    background-image: url('/assets/checklist.png');
+    background-image: url('/assets/lock.png');
     background-size: cover;
 }
 
 .action-card {
     justify-content: center;
+}
+
+.div-header {
+    width: 100vw;
+    height: 15vh;
+    margin: 12px 0 0 12px;
+}
+
+.img-logo {
+    object-fit: cover;
+    height: 100%;
 }

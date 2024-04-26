@@ -88,8 +88,8 @@ XData BPL [ XMLNamespace = "http://www.intersystems.com/bpl" ]
 </call>
 <call name='Create auto task' target='AutomaticBloodPressureRole' async='1' xpos='875' ypos='1150' >
 <request type='EnsLib.Workflow.TaskRequest' >
-<assign property="callrequest.%Actions" value="&quot;Automatic&quot;" action="set" />
-<assign property="callrequest.%Message" value="&quot;This is an automatic task to manage the info sent by devices&quot;" action="set" />
+<assign property="callrequest.%Actions" value="&quot;&quot;" action="set" />
+<assign property="callrequest.%Message" value="&quot;Please, take your blood pressure with the medical device, this task will be closed automatically&quot;" action="set" />
 <assign property="callrequest.%UserName" value="context.username" action="set" />
 <assign property="callrequest.%Subject" value="&quot;Waiting for blood pressure measures&quot;" action="set" />
 </request>
