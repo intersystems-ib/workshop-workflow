@@ -55,4 +55,4 @@ To launch the process you only have to copy and paste **message_1_1.hl7** into *
 
 ![Tasks](/images/tasks_list.png)
 
-One of this tasks will be automatic and the system will close it as soon as a new hl7 file (**message_1_1.hl7**)
+The task with no action associated will be automatically closed as soon as a new hl7 file (**message_1_1.hl7**) is received in the production meanwhile the task with an action will be waiting for the user confirmation.
