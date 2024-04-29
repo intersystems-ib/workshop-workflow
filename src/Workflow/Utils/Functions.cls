@@ -73,7 +73,7 @@ ClassMethod CheckTask(username As %String, role As %String) As EnsLib.Workflow.T
     set $NAMESPACE = "WORKFLOW"
     &sql(SELECT ID INTO :taskId FROM EnsLib_Workflow.TaskResponse WHERE TaskStatus_AssignedTo = :username AND TaskStatus_IsComplete = 0 AND %RoleName = :role)
        
-    if ((SQLCODE<0) || SQLCODE = 100) {
+    if ((SQLCODE<0) || (SQLCODE = 100)) {
         Return ""
     }
     else {
