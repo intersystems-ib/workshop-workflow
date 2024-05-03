@@ -74,7 +74,7 @@ XData BPL [ XMLNamespace = "http://www.intersystems.com/bpl" ]
 </true>
 <false>
 <trace name='No pending task' value='"No pending task "_context.systolic_" "_context.dyastolic' xpos='740' ypos='800' />
-<if name='Check pressure' condition='(context.systolic &gt; 140) || (context.dyastolic &gt; 90)' xpos='740' ypos='900' xend='740' yend='1350' >
+<if name='Check pressure' condition='(context.systolic &gt; 140) || (context.dyastolic &gt; 90)' xpos='740' ypos='900' xend='709' yend='2155' >
 <true>
 <call name='Create manual task' target='ManualBloodPressureRole' async='1' xpos='875' ypos='1050' >
 <request type='EnsLib.Workflow.TaskRequest' >
@@ -98,8 +98,6 @@ XData BPL [ XMLNamespace = "http://www.intersystems.com/bpl" ]
 </response>
 </call>
 <sync name='Wait for tasks' calls='Create manual task,Create auto task' type='all' xpos='875' ypos='1250' />
-</true>
-</if>
 <if name='Check if warning' condition='context.automaticResult = "Warning"' xpos='740' ypos='1450' xend='740' yend='1900' >
 <true>
 <call name='Warning task for doctor' target='ManualBloodPressureRole' async='1' xpos='875' ypos='1600' >
@@ -123,6 +121,8 @@ XData BPL [ XMLNamespace = "http://www.intersystems.com/bpl" ]
 <response type='EnsLib.Workflow.TaskResponse' />
 </call>
 <sync name='Waiting for tasks' calls='Warning task for doctor,Warning task for patient' type='all' xpos='875' ypos='1800' />
+</true>
+</if>
 </true>
 </if>
 </false>
